@@ -1,7 +1,15 @@
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class CalculatorTest {
+
+    Calculator calculator = null;
+
+    @BeforeEach
+    void setUp() {
+        calculator = new Calculator();
+    }
 
     /*
      * Unit Tests practice :
@@ -16,21 +24,18 @@ public class CalculatorTest {
      */
     @Test
     void shouldReturnSumOfTwoNumber2And5As7() {
-        Calculator calculator = new Calculator();
         int sum = calculator.add(2, 5);
         Assertions.assertEquals(7, sum);
     }
 
     @Test
     void shouldReturn2When10DividedBy5() {
-        Calculator calculator = new Calculator();
         double value = calculator.divide(10, 5);
         Assertions.assertEquals(2, value);
     }
 
     @Test
     void shouldReturnArithmeticExceptionWhenDividedBy0() {
-        Calculator calculator = new Calculator();
         ArithmeticException arithmeticException = Assertions
                 .assertThrows(ArithmeticException.class, () -> calculator.divide(10, 0));
 
