@@ -20,4 +20,11 @@ public class CalculatorTest {
         int sum = calculator.add(2, 5);
         Assertions.assertEquals(7, sum);
     }
+
+    @Test
+    void shouldReturn2When10DividedBy5() {
+        Calculator calculator = new Calculator();
+        double value = calculator.divide(10, 5);
+        Assertions.assertEquals(2, value);
+    }
 }
