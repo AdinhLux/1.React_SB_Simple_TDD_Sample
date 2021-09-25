@@ -3,7 +3,7 @@ public class Calculator {
         return firstNumber + secondNumber;
     }
 
-    public double divide(int firstNumber, int secondNumber) {
-        return 0;
+    public double divide(int firstNumber, int divisor) {
+        return (double) firstNumber / divisor;
     }
 }
