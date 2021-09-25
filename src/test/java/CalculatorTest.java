@@ -27,4 +27,13 @@ public class CalculatorTest {
         double value = calculator.divide(10, 5);
         Assertions.assertEquals(2, value);
     }
+
+    @Test
+    void shouldReturnArithmeticExceptionWhenDividedBy0() {
+        Calculator calculator = new Calculator();
+        ArithmeticException arithmeticException = Assertions
+                .assertThrows(ArithmeticException.class, () -> calculator.divide(10, 0));
+
+        Assertions.assertEquals("Can not divide by 0", arithmeticException.getMessage());
+    }
 }
