@@ -1,0 +1,23 @@
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+
+public class CalculatorTest {
+
+    /*
+     * Unit Tests practice :
+     *
+     * We create first a method to test tha actual behaviour of our Application : in the 'add()' method in Calculator we don't implement any code, just return 0
+     *
+     * Refactoring the three laws of TDD :
+     *
+     * - You are not allowed to write any production code unless it is to make a failing unit test pass.
+     * - You are not allowed to write any more of a unit test than is sufficient to fail; and compilation failures are failures.
+     * - You are not allowed to write any more production code than is sufficient to pass the one failing unit test.
+     */
+    @Test
+    void shouldReturnSumOfTwoNumber2And5As7() {
+        Calculator calculator = new Calculator();
+        int sum = calculator.add(2, 5);
+        Assertions.assertEquals(7, sum);
+    }
+}
